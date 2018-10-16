@@ -1,0 +1,109 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+ext {
+    bintrayRepo = 'SWSdk'
+    bintrayName = 'SWSdk'
+
+    publishedGroupId = 'ru.livli'
+    libraryName = 'SWSdk'
+    artifact = 'swsdk'
+
+    libraryDescription = 'SkillWill sdk'
+
+    siteUrl = ''
+    gitUrl = ''
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'humanteqdev'
+    developerName = 'KS'
+    developerEmail = ''
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android.sourceSets.main.java.srcDirs += 'build/generated/source/objectbox'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    implementation "io.objectbox:objectbox-android:2.1.0"
+    implementation "io.objectbox:objectbox-kotlin:2.1.0"
+    kapt "io.objectbox:objectbox-processor:2.1.0"
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+
+    // KTX
+    implementation 'androidx.core:core-ktx:1.0.0'
+
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:0.10.7"
+    implementation "org.jetbrains.anko:anko-coroutines:0.10.7"
+
+    //Firebase
+    implementation "com.firebase:firebase-jobdispatcher:0.8.5"
+    implementation "com.google.android.gms:play-services-location:16.0.0"
+
+    //ExifInterface
+    implementation "androidx.exifinterface:exifinterface:1.0.0"
+
+    // ViewModel and LiveData
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.0.0'
+}
+
+//if(project.rootProject.file('local.properties').exists()) {
+//    apply from: '../bintrayUploader.gradle'
+//}

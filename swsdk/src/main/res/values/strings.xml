@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SWSdk</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
+    <string name="permission_request_title">Запрос доступа</string>
+    <string name="permission_request_msg">Пожалуйста, предоставьте разрешение</string>
+</resources>

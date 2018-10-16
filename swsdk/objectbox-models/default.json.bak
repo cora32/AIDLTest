@@ -1,0 +1,63 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "2:5440427305316774426",
+      "lastPropertyId": "4:457278380078985829",
+      "name": "SWEvent",
+      "properties": [
+        {
+          "id": "1:7974929849021614702",
+          "name": "name"
+        },
+        {
+          "id": "2:4999981473313057498",
+          "name": "params"
+        },
+        {
+          "id": "3:3858996057929195656",
+          "name": "innedId"
+        },
+        {
+          "id": "4:457278380078985829",
+          "name": "utc"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:1332092452015329637",
+      "lastPropertyId": "2:7750687327934188078",
+      "name": "BaseEntity",
+      "properties": [
+        {
+          "id": "1:725259320001487096",
+          "name": "innedId"
+        },
+        {
+          "id": "2:7750687327934188078",
+          "name": "utc"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:1332092452015329637",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [
+    959843414609319202
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    6031811394217020150,
+    6401700486262659077
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
